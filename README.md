@@ -1,7 +1,7 @@
 # MONITORING HELM CHART
 Implementation of the test task.
 
-The projector was developed and tested in minikube (version Kubernetes 1.24.3)
+The project was developed and tested in minikube (version Kubernetes 1.24.3)
 
 The chart is based on kube-prometheus-stack with the addition of prometheus-blackbox-exporter. 
 In the settings kube-prometheus-stack `./values.yaml` are disabled: 
@@ -45,6 +45,8 @@ git clone https://github.com/FaxIv/monitoring.git
 ```console
 helm install monitoring monitoring --namespace unitest --create-namespace
 ```
+If you use another name of release, you need to change name of blackbox-service in ./value.yaml
+    `prometheusSpec.additionalScrapeConfigs.relabel_configs.replacement`
 
 ### Access to the Grafana
 
