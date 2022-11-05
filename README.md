@@ -1,6 +1,8 @@
 # MONITORING HELM CHART
 Implementation of the test task.
 
+The projector was developed and tested in minikube v1.26.1.
+
 The chart is based on kube-prometheus-stack with the addition of prometheus-blackbox-exporter. 
 In the settings kube-prometheus-stack `./values.yaml` are disabled: 
   - nodeExporter
@@ -35,7 +37,7 @@ Password for Grafana admin is set "unitest123".
 ### Copy Helm Chart from GitHub
 
 ```console
-https://github.com/FaxIv/monitoring.git
+git clone https://github.com/FaxIv/monitoring.git
 ```
 
 ### Install Helm Chart
