@@ -57,5 +57,5 @@ In your browser, open the 127.0.0.1:9099 (Grafana web interface)
   - login: admin
   - password: unitest123
 
-
+The desired dashboard can be found `Dashboard => Browse => blackbox => Blackbox Exporter (HTTP prober)`
 
