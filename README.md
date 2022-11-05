@@ -1,7 +1,8 @@
+# MONITORING HELM CHART
 Implementation of the test task.
 
 The chart is based on kube-prometheus-stack with the addition of prometheus-blackbox-exporter. 
-In the settings kube-prometheus-stack (./values.yaml) are disabled: 
+In the settings kube-prometheus-stack `./values.yaml` are disabled: 
   - nodeExporter
   - alertmanager
   - kubeStateMetrics
@@ -17,19 +18,40 @@ In the settings kube-prometheus-stack (./values.yaml) are disabled:
 For deploy the chart is used namespace "unitest".
 
 As endpoint is selected www.google.com. 
-./values.yaml prometheus.prometheusSpec.additionalScrapeConfigs
+`./values.yaml prometheus.prometheusSpec.additionalScrapeConfigs`
 
 Password for Grafana admin is set "unitest123".
-./values.yaml grafana.adminPassword
+`./values.yaml grafana.adminPassword`
 
 
-DEPLOY CHART
+## DEPLOY CHART
 
-Requirements:
- - Kubernetes cluster (minikube)
- - Helm
 
-'git clone '
+### Prerequisites
 
-'helm install monitoring monitoring --namespace unitest --create-namespace'
+- Kubernetes 1.16+
+- Helm 3+
+
+### Copy Helm Chart from GitHub
+
+```console
+https://github.com/FaxIv/monitoring.git
+```
+
+### Install Helm Chart
+
+```console
+helm install monitoring monitoring --namespace unitest --create-namespace
+```
+
+### Access to the Grafana
+
+```console
+kubectl port-forward -n unitest service/monitoring-grafana 9099:80
+```
+In your browser, open the 127.0.0.1:9099 (Grafana web interface)
+  - login: admin
+  - password: unitest123
+
+
 
