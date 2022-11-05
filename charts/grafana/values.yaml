@@ -617,14 +617,14 @@ dashboardProviders:
   dashboardproviders.yaml:
     apiVersion: 1
     providers:
-    - name: 'default'
+    - name: 'blackboxe'
       orgId: 1
-      folder: ''
+      folder: 'blackboxe'
       type: file
       disableDeletion: false
       editable: true
       options:
-        path: /var/lib/grafana/dashboards/default
+        path: /var/lib/grafana/dashboards/blackboxe
 
 ## Configure grafana dashboard to import
 ## NOTE: To use dashboards you must also enable/configure dashboardProviders
@@ -633,7 +633,7 @@ dashboardProviders:
 ## dashboards per provider, use provider name as key.
 ##
 dashboards:
-   default:
+   blackboxe:
      custom-dashboard:
        file: dashboards/blackbox-exporter-http-prober_rev1.json
   #   some-dashboard:
