@@ -633,9 +633,13 @@ dashboardProviders:
 ## dashboards per provider, use provider name as key.
 ##
 dashboards:
-   blackboxe:
-     custom-dashboard:
-       file: dashboards/blackbox-exporter-http-prober_rev1.json
+  blackboxe:
+    prometheus-stats:
+      gnetId: 13659
+      revision: 1
+      datasource: Prometheus
+#     custom-dashboard:
+#       file: dashboards/blackbox-exporter-http-prober_rev1.json
   #   some-dashboard:
   #     json: |
   #       $RAW_JSON

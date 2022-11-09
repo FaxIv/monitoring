@@ -130,6 +130,12 @@ global:
   # or
   # - "image-pull-secret"
 
+
+## Prometheus blackbox-exporter
+## 
+blackboxExporter:
+  enabled: true
+
 ## Configuration for alertmanager
 ## ref: https://prometheus.io/docs/alerting/alertmanager/
 ##
